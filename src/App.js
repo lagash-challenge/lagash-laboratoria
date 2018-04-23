@@ -19,10 +19,22 @@ class App extends Component {
 
   }//END Constructor
 
-  componentWillUnmount() {
-    
+    componentDidMount() {
+      this.fetchData();
+    } // END componentWillUnmount
 
-  } // END componentWillUnmount
+    
+fetchData(){
+  fetch ('https://api-worldnews.azurewebsites.net/news', {
+    method: "GET",
+    headers: {
+      Accept: 'application/json',
+    }
+  })
+  .then ((response)=> response.json())
+  .then (parsedJSON => console.log (parsedJSON))
+  .catch(error => console.log('parsing failed'))
+}// END fetchData
 
   handleSubmit(user){
     let message = { id: Date.now(), text: this.state.text };
