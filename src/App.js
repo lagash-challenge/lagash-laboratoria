@@ -1,18 +1,69 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+//Pages
+import Newsfeed from './Pages/NewsFeedPage';
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+   // this.handleClick = this.handleClick.bind(this);
+    //this.handleChangeInput = this.handleChangeInput.bind(this);
+
+    this.state = {
+      user:"",
+      messages: [],
+      text: "",
+      post:[]
+    }
+
+  }//END Constructor
+
+    componentDidMount() {
+      this.fetchData();
+    } // END componentWillUnmount
+
+    
+fetchData(){
+  fetch ('https://api-worldnews.azurewebsites.net/news', {
+    method: "GET",
+    headers: {
+      Accept: 'application/json',
+    }
+  })
+  .then ((response)=> response.json())
+  .then (parsedJSON => console.log (parsedJSON))
+  .catch(error => console.log('parsing failed'))
+}// END fetchData
+
+  handleSubmit(user){
+    let message = { id: Date.now(), text: this.state.text };
+
+    this.setState(
+      {
+        user: user,
+        messages: this.state.messages.concat([message]),
+        text: ""
+      }
+    );
+  } //END handleSubmit
+
+  handleChangeInput(value) {
+    this.setState({ text: value })
+  }
+
+
+
   render() {
+    console.log(this.state.post);
+    
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Newsfeed 
+        state = {this.state}
+        handleSubmit = {this.handleSubmit}
+        handleChangeInput = {this.handleChangeInput}
+        />
       </div>
     );
   }
