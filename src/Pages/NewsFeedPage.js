@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
-//Elements
+//Components
+import Menu from './Components/Navbar';
 import InputPost from './Components/InputPost';
 import Post from './Components/Post';
+
 
 
 
@@ -37,7 +39,8 @@ class Newsfeed extends Component {
     render() {
         return (
             <div>
-                <InputPost
+              <Menu />
+               <InputPost
                     handleClick={this.handleClick}
                     handleChangeInput={this.handleChangeInput}
                     text={this.state.text}
