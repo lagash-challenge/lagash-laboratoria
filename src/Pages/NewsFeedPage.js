@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 //Components
-import InputPost from "./Components/InputPost"
+import InputPost from "./Components/InputPost";
+import Menu from './Components/Navbar';
 
 
 
@@ -14,6 +15,7 @@ export default class Newsfeed extends Component {
 
         return (
             <div>
+              <Menu />
               Página de newsfeed WIP
               <InputPost 
               state={this.props.state}
