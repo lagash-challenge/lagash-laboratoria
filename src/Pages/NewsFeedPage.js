@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
-
+import Navbar from './Components/Navbar';
 
 
 export default class Newsfeed extends Component {
-    constructor(props) {
-        super(props);
-        
-
-    }//END Constructor
-
-    
-
     render() {
         return (
             <div>
-              Página de newsfeed WIP
+              <Navbar />
             </div>)
     }
 } //END newsfeed

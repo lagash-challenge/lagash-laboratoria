@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './Pages/NewsFeedPage'
 
 class App extends Component {
 
