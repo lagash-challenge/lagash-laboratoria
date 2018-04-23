@@ -1,44 +1,36 @@
 import React, { Component } from 'react';
-import { Col, Button, Form, FormGroup, Input } from 'reactstrap';
+import { Button, Form, Input } from 'reactstrap';
 
-export default class InputPost extends Component {
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
+//Elements
 
-    }//END Constructor
 
-    handleChange(event) {
-        let msn = event.target.value;
-        this.props.handleChangeInput(msn)
-    }
+class InputPost extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
-   
+  }//END Constructor
 
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.handleClick()
+
+  } //EDN submit
+
+  handleChange(event) {
+    let msn = event.target.value;
+    this.props.handleChangeInput(msn)
+  }
 
   render() {
-    console.log(this.props.state);
-    
+
     return (
-      <Form>
-        <FormGroup row>
-          <Col sm={10}>
-            <Input type="text" name="user" id="User" placeholder="Nombre" />
-          </Col>
-        </FormGroup>
-        <FormGroup row>
-          <Col sm={10}>
-            <Input type="textarea" name="text" id="Post" placeholder="¿Qué estas pensando?" 
-             value={this.props.text}
-             onChange={this.handleChange}/>
-          </Col>
-        </FormGroup>
-        <FormGroup check row>
-          <Col sm={{ size: 10, offset: 2 }}>
-            <Button>Publicar</Button>
-          </Col>
-        </FormGroup>
-      </Form>
-    );
+      <Form onSubmit={this.handleSubmit}>
+        <Input placeholder="Comparte tu opinión" value={this.props.text} onChange={this.handleChange} type="textarea" name="text" id="message" />
+        <Button type="submit" className="prueba">Publicar</Button>
+      </Form>);
   }
 } //END InputPost
+
+export default InputPost;
