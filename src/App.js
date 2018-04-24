@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Switch, Route, Router} from 'react-router';
+import {Switch, Route} from 'react-router';
 import './App.css';
 
 //Pages

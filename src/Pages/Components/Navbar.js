@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Collapse,
   Navbar,
-  NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink } from 'reactstrap';
@@ -27,8 +24,8 @@ export default class Menu extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
+          {/* <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar> */}
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="/">
@@ -38,11 +35,12 @@ export default class Menu extends Component {
                   </InputGroup>
                 </NavLink>
               </NavItem>
+              <img src="https://user-images.githubusercontent.com/32860789/39203275-eaa0b93e-47b9-11e8-9484-9ff8b466b4af.png" />  
               <NavItem>
                 <NavLink href="/"><i className="far fa-question-circle"></i></NavLink>
               </NavItem>
             </Nav>
-          </Collapse>
+          {/* </Collapse> */}
         </Navbar>
       </div>
     );
