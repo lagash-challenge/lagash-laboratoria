@@ -26,6 +26,11 @@ class Newsfeed extends Component {
 
     }//END Constructor
 
+    componentWillMount() {
+        this.fetchData();
+
+    } // END componentWillUnmount
+
     handleClick() {
         let message = {  language:"es",
                          id: Date.now(),
@@ -62,6 +67,7 @@ class Newsfeed extends Component {
             .then((response) => response.json())
             .then(parsedJSON => this.setState({ score: parsedJSON }))
             .then(()=>this.creatingfinalPost())
+            .then(()=>this.sendFinalPost())
             .catch(error => console.log('parsing failed')) //END Score
        
             
@@ -86,20 +92,28 @@ class Newsfeed extends Component {
         };
             
         this.setState({ postFinal: finalPost });
-
-        
         
     } //END creatingfinalPost and POST FINALPOST
+
+    sendFinalPost(){
+        fetch("http://api-worldnews.azurewebsites.net/news", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(this.state.postFinal),
+            "content-type": 'application/json',
+        })
+            .then((response) => response.json())
+            .catch(error => console.log('parsing failed'))
+
+    } //END sendFinalPost
 
 
     handleChangeInput(value) {
         this.setState({ text: value })
-    }
-    componentWillMount() {
-        this.fetchData();
-    } // END componentWillUnmount
-
-
+    } 
+    
     fetchData() {
         fetch('https://api-worldnews.azurewebsites.net/news', {
             method: "GET",
@@ -116,8 +130,6 @@ class Newsfeed extends Component {
         console.log("keyphrasee", this.state.keyPhrases );
         console.log( "score",  this.state.score );
         console.log(this.state.postFinal);
-        
-        
         
         return (
             <div>
