@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Row, Col, Media, Jumbotron } from 'reactstrap';
+import { Row, Col, Jumbotron } from 'reactstrap';
+import TrendingTopics from './DetailTTPage';
 
 //Components
 import TrendingTopics from './DetailTTPage';
@@ -150,15 +151,10 @@ class Newsfeed extends Component {
             <div>
               <Menu />
               <Jumbotron>
-                <h1 className="display-3">Hello, world!</h1>
-                <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
-                <hr className="my-2" />
-                <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
-                <p className="lead">
-                </p>
+                <img src="https://user-images.githubusercontent.com/32860789/39203019-4b8ef4b4-47b9-11e8-88c8-25f15823f97b.png" width="40%"/>
               </Jumbotron>
               <Row>
-                <Col md="6">
+                <Col md="6" xs="12">
                 <p>¿Qué quieres compartir hoy?</p>
                 <InputPost
                     handleClick={this.handleClick}
@@ -167,12 +163,16 @@ class Newsfeed extends Component {
                     text={this.state.text}
                     name={this.state.user}
                 />
+                <img src="https://user-images.githubusercontent.com/32860789/39204328-191e6010-47bd-11e8-8af6-6ea19a4aa073.png" width="90%"/>                
                 <Post
                     messages={this.state.posts}
                   />
                 </Col>
-                <Col md="6">
-                  <TrendingTopics posts ={this.state.posts} />
+
+                <Col md="5" xs="12">
+                  <img src="https://user-images.githubusercontent.com/32860789/39207866-bd781558-47c6-11e8-86e5-756667353123.png" width="90%"/>                
+                  <img src="https://user-images.githubusercontent.com/32860789/39206719-c6c94184-47c3-11e8-829b-1e0556072ede.png" width="90%"/>                
+                  <TrendingTopics />
                 </Col>
               </Row>
             </div>)
