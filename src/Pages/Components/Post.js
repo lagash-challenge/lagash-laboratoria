@@ -7,15 +7,27 @@ class Post extends Component {
     render() {
         let messages = this.props.messages;  
         
-        if (messages===undefined){
+        if (!messages){
             return(
                 <div></div>
             )
         }else{
+            messages.sort(function(a, b){
+                var dateA = new Date(a.date);
+                var dateB = new Date(b.date);
+
+                if (dateA.getTime() < dateB.getTime())
+                    return 1;
+
+                else if (dateA.getTime() > dateB.getTime())
+                    return -1;
+
+                return 0;
+            });
             return (
                 <div>
                     <Row>
-                     { messages.sort().map((item, index)=>{
+                     { messages.map((item, index)=>{
                          return(
                           <Col key={item.id||index} sm="12">
                             <Card body>
