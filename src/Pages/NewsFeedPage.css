@@ -16,7 +16,9 @@
 }
 
 #root > div {
-    background-image: url('../images/5372.jpg')
+    background: #EBEBFF;
+    /* background-image: url('../images/5372.jpg');
+    background-size: cover; */
 }
 
 #root > div > div > div.row > div > p {
@@ -44,10 +46,27 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #add3c7;
+    background-color: #ebebff;
 }
 
 #message {
     width: 533px;
     height: 169px;   
+}
+
+#root > div > div > div.row > div > div > div > div > div {
+  width: 545px;
+  height: 165px;
+  /* opacity: 0.22; */
+  border-radius: 7px;
+  background-color: #d03a97;
+  margin: 2%;
+}
+
+#root > div > div > div.row > div > ul > li{
+    /* width: 545px;
+    height: 479px; */
+    /* opacity: 0.22; */
+    border-radius: 7px;
+    background-color: #30d8a4;
 }
