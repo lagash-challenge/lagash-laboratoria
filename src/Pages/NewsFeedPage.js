@@ -5,9 +5,6 @@ import Menu from './Components/Navbar';
 import InputPost from './Components/InputPost';
 import Post from './Components/Post';
 
-
-
-
 class Newsfeed extends Component {
     constructor(props) {
         super(props);
@@ -29,7 +26,6 @@ class Newsfeed extends Component {
                          id: Date.now(),
                          text: this.state.text };
 
-        let messages = 
         this.setState(
                 { messagesUser : this.state.messagesUser.concat([message]),
                   text: "" }

@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
 import {Switch, Link, Route, Router} from 'react-router';
-import './Pages/NewsFeedPage';
+import NewsFeedPage from './Pages/NewsFeedPage';
+import DashboardPage from'./Pages/DashboardPage';
 
 export default class Router extends Component {
-    constructor(props) {
-        super(props);
-        
-
-    }//END Constructor
-
-    
 
     render() {
         return (
-        <Switch>
-            <Route exact path="/" component={Newsfeed}/>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={NewsFeedPage}/>
+            <Route exact path="/Dashboard" component={DashboardPage}/>
           </Switch>
+        </ Router>
     );
     }
-} //END newsfeed
+}
