@@ -27,24 +27,14 @@ export default class Menu extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Logo de la red social</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/"><i className="fas fa-user"></i></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/"><i className="fas fa-envelope"></i></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/"><i className="far fa-bell"></i></NavLink>
-              </NavItem>
-              <NavItem>
                 <NavLink href="/">
                   <InputGroup>
-                    <Input placeholder="username" />
-                    <InputGroupAddon addonType="append"><i className="fas fa-search"></i></InputGroupAddon>
+                    <InputGroupAddon addonType="append"><i className="fas fa-search"></i></InputGroupAddon>                  
+                    <Input placeholder="Buscar noticia"/>
                   </InputGroup>
                 </NavLink>
               </NavItem>
