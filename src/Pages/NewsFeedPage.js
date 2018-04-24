@@ -82,10 +82,10 @@ class Newsfeed extends Component {
         let index=this.state.messagesUser.length;
         var keyPhrases = [];
         var sentiment = [];     
-        if (this.state.keyPhrases.documents.length) {
+        if (this.state.keyPhrases != undefined || this.state.keyPhrases.length) {
             keyPhrases = this.state.keyPhrases.documents[0].keyPhrases;
         }
-        if (this.state.score.documents.length) {
+        if (this.state.score != undefined || this.state.score.length) {
             sentiment = this.state.score.documents[0].score;
         }
 
