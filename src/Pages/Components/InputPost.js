@@ -26,7 +26,7 @@ class InputPost extends Component {
   render() {
 
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} lg="6">
         <Input placeholder="Comparte tu opinión" value={this.props.text} onChange={this.handleChange} type="textarea" name="text" id="message" />
         <Button type="submit" className="prueba">Publicar</Button>
       </Form>);

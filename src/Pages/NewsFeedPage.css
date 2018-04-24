@@ -1,0 +1,20 @@
+#root > div > div > div:nth-child(1) > nav > div > ul > li:nth-child(1) > a > div {
+    width: 271px;
+    height: 38px;
+    border-radius: 19px;
+    background-color: #f5a623;
+}
+
+#root > div > div > div:nth-child(1) > nav > div > ul > li:nth-child(1) > a > div > input {
+    background-color: #f5a623;
+    border: 1px solid #f5a623;
+    border-radius: 19px;
+}
+
+#root > div > div > div:nth-child(1) > nav > div > ul > li:nth-child(3) > a > i {
+ color: #ffab00;
+}
+
+#root > div {
+    background-image: url('../images/5372.jpg')
+}

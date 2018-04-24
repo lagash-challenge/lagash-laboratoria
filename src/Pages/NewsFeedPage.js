@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'reactstrap';
 
 //Components
 import Menu from './Components/Navbar';
 import InputPost from './Components/InputPost';
 import Post from './Components/Post';
+import './NewsFeedPage.css';
 
 class Newsfeed extends Component {
     constructor(props) {
@@ -131,6 +133,9 @@ class Newsfeed extends Component {
         return (
             <div>
               <Menu />
+              <Row>
+                <Col md="6">
+                <p>¿Qué quieres compartir hoy?</p>
                <InputPost
                     handleClick={this.handleClick}
                     handleChangeInput={this.handleChangeInput}
@@ -138,7 +143,9 @@ class Newsfeed extends Component {
                 />
                 <Post
                     messages={this.state.posts}
-                />
+                  />
+                </Col>
+              </Row>
             </div>)
     }
 } //END newsfeed
