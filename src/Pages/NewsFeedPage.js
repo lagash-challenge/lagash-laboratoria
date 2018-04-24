@@ -79,14 +79,22 @@ class Newsfeed extends Component {
 
     creatingfinalPost(){
 
-        let index=this.state.messagesUser.length;     
+        let index=this.state.messagesUser.length;
+        var keyPhrases = [];
+        var sentiment = [];     
+        if (this.state.keyPhrases != undefined || this.state.keyPhrases.length) {
+            keyPhrases = this.state.keyPhrases.documents[0].keyPhrases;
+        }
+        if (this.state.score != undefined || this.state.score.length) {
+            sentiment = this.state.score.documents[0].score;
+        }
 
         const finalPost = {
             user: this.state.user,
             text: this.state.messagesUser[index-1].text,
             metaData: {
-                keyphrases: this.state.keyPhrases.documents[0].keyPhrases,
-                sentiment: this.state.score.documents[0].score,
+                keyphrases: keyPhrases,
+                sentiment: sentiment,
                 photos: [],
                 videos: []
             }
