@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Media } from 'reactstrap';
+import TrendingTopics from './DetailTTPage';
 
 //Components
 import Menu from './Components/Navbar';
@@ -139,16 +140,19 @@ class Newsfeed extends Component {
               <Row>
                 <Col md="6">
                 <p>¿Qué quieres compartir hoy?</p>
-               <InputPost
+                <InputPost
                     handleClick={this.handleClick}
                     handleChangeInput={this.handleChangeInput}
                     handleChangeName={this.handleChangeName}
                     text={this.state.text}
                     name={this.state.user}
-                />
+                /> 
                 <Post
                     messages={this.state.posts}
                   />
+                </Col>
+                <Col md="6">
+                  <TrendingTopics />
                 </Col>
               </Row>
             </div>)

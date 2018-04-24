@@ -18,3 +18,36 @@
 #root > div {
     background-image: url('../images/5372.jpg')
 }
+
+#root > div > div > div.row > div > p {
+    width: 291px;
+    height: 36px;
+    font-family: DoctorSoos;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #575aab;
+}
+
+#root > div > div > div.row > div > form > input {
+    width: 181px;
+    height: 36px;
+    font-family: DoctorSoos;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #add3c7;
+}
+
+#message {
+    width: 533px;
+    height: 169px;   
+}
