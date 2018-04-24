@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Media } from 'reactstrap';
+import { Row, Col, Media, Jumbotron } from 'reactstrap';
 import TrendingTopics from './DetailTTPage';
 
 //Components
@@ -149,6 +149,14 @@ class Newsfeed extends Component {
         return (
             <div>
               <Menu />
+              <Jumbotron>
+                <h1 className="display-3">Hello, world!</h1>
+                <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr className="my-2" />
+                <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
+                <p className="lead">
+                </p>
+              </Jumbotron>
               <Row>
                 <Col md="6">
                 <p>¿Qué quieres compartir hoy?</p>
@@ -158,7 +166,7 @@ class Newsfeed extends Component {
                     handleChangeName={this.handleChangeName}
                     text={this.state.text}
                     name={this.state.user}
-                /> 
+                />
                 <Post
                     messages={this.state.posts}
                   />
