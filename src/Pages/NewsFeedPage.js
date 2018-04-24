@@ -15,28 +15,65 @@ class Newsfeed extends Component {
         this.handleChangeInput = this.handleChangeInput.bind(this);
 
         this.state = {
-            messages: [],
-            text: ""
+            posts: [],
+            text: "",
+            messagesUser: [] ,
+            keyPhrases:{}
+            
         }
 
     }//END Constructor
 
     handleClick() {
-        let message = { id: Date.now(), text: this.state.text };
+        let message = {  language:"es",
+                         id: Date.now(),
+                         text: this.state.text };
 
+        let messages = 
         this.setState(
-            {
-                messages: this.state.messages.concat([message]),
-                text: ""
-            }
-        );
-    } //EDN submit and clear input
+                { messagesUser : this.state.messagesUser.concat([message]),
+                  text: "" }
+                );//END submit and clear input
+        
+
+            
+            fetch("http://api-worldnews.azurewebsites.net/cognitive/keyphrases", {
+            method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ documents: [message] }),
+            "content-type": 'application/json',
+        })
+            .then((response) => response.json())
+            .then(parsedJSON => this.setState({ keyPhrases: parsedJSON }))
+            .catch(error => console.log('parsing failed'))
+            
+    } 
 
     handleChangeInput(value) {
         this.setState({ text: value })
     }
+    componentWillMount() {
+        this.fetchData();
+    } // END componentWillUnmount
+
+
+    fetchData() {
+        fetch('https://api-worldnews.azurewebsites.net/news', {
+            method: "GET",
+            headers: {
+                Accept: 'application/json',
+            }
+        })
+            .then((response) => response.json())
+            .then(parsedJSON => this.setState({ posts: parsedJSON }))
+            .catch(error => console.log('parsing failed'))
+    }// END fetchData
 
     render() {
+        console.log({ documents: this.state.keyPhrases } );
+        
         return (
             <div>
               <Menu />
@@ -46,7 +83,7 @@ class Newsfeed extends Component {
                     text={this.state.text}
                 />
                 <Post
-                    messages={this.state.messages}
+                    messages={this.state.posts}
                 />
             </div>)
     }
