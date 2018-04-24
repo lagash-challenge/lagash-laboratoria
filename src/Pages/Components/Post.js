@@ -15,9 +15,9 @@ class Post extends Component {
             return (
                 <div>
                     <Row>
-                     { messages.map(item=>{
+                     { messages.sort().map((item, index)=>{
                          return(
-                          <Col key={item.id} sm="12">
+                          <Col key={item.id||index} sm="12">
                             <Card body>
                                <CardTitle>{item.user}</CardTitle>
                                <CardText>{item.text}</CardText>
