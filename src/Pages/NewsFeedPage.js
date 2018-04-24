@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Row, Col, Jumbotron } from 'reactstrap';
-import TrendingTopics from './DetailTTPage';
 
 //Components
 import TrendingTopics from './DetailTTPage';

@@ -30,13 +30,29 @@ export default class TrendingTopics extends React.Component {
       .catch(error => console.log('parsing failed'))
   }// END fetchData
 
+  addMonster(){
+    this.state.posts.map(item => {
+      
+
+    })
+  }
   render() {
-    
+        
     return (
       <ListGroup> .
           {  this.state.posts.map(item=>{
+          var monster = null;
+          if (item.metaData.sentiment > .7) {
+            monster = <img width="30px" src="https://user-images.githubusercontent.com/32860406/39215651-3f2c7564-47de-11e8-89ce-3ba1a3861097.png" />
+          } else if (item.metaData.sentiment > .3 < .7) {
+            monster = <img width="30px" src="https://user-images.githubusercontent.com/32860406/39215648-3d4df678-47de-11e8-94df-4098cad2add3.png" />
+          } else {
+            monster = <img width="30px" src="https://user-images.githubusercontent.com/32860406/39215656-45d2047e-47de-11e8-9a31-5a7243eac652.png" />
+          }
               return (
-                <ListGroupItem>{item.metaData.keyphrases[0]}</ListGroupItem>
+                <ListGroupItem>
+                  {monster}
+                  #{item.metaData.keyphrases[0]}</ListGroupItem>
                 )
             }) } 
       </ListGroup>
