@@ -27,18 +27,10 @@ export default class Menu extends Component {
           {/* <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar> */}
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/">
-                  <InputGroup>
-                    <InputGroupAddon addonType="append"><i className="fas fa-search"></i></InputGroupAddon>                  
-                    <Input placeholder="Buscar noticia"/>
-                  </InputGroup>
-                </NavLink>
-              </NavItem>
               <img src="https://user-images.githubusercontent.com/32860789/39203275-eaa0b93e-47b9-11e8-9484-9ff8b466b4af.png" />  
-              <NavItem>
+              {/* <NavItem>
                 <NavLink href="/"><i className="far fa-question-circle"></i></NavLink>
-              </NavItem>
+              </NavItem> */}
             </Nav>
           {/* </Collapse> */}
         </Navbar>
