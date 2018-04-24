@@ -31,7 +31,7 @@ export default class Menu extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Logo de la red social</NavbarBrand>
+          <NavbarBrand href="/Newsfeed">Logo de la red social</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -47,7 +47,7 @@ export default class Menu extends Component {
               <NavItem>
                 <NavLink href="/">
                   <InputGroup>
-                    <Input placeholder="username" />
+                    <Input placeholder="Buscar noticia"/>
                     <InputGroupAddon addonType="append"><i className="fas fa-search"></i></InputGroupAddon>
                   </InputGroup>
                 </NavLink>
