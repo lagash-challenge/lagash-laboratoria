@@ -32,7 +32,7 @@ export default class Menu extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/"><i className="fas fa-user"></i></NavLink>
+                <NavLink href="/dashboard"><i className="fas fa-user"></i></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/"><i className="fas fa-envelope"></i></NavLink>

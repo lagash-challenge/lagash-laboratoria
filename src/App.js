@@ -10,10 +10,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Router>
+      <Switch>
             <Route exact path="/" component={Newsfeed}/>
             <Route exact path="/dashboard" component={Dashboard}/>
-        </ Router>
+        </ Switch>
       </div>
     );
   }
