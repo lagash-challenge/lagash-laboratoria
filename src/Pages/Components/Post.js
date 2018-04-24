@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 
-class Post extends Component {
-    constructor(props) {
-        super(props);
-        
-    }    
+class Post extends Component {   
 
     render() {
         let messages = this.props.messages;  
@@ -23,7 +19,7 @@ class Post extends Component {
                          return(
                           <Col key={item.id} sm="12">
                             <Card body>
-                               <CardTitle>Tu dijiste</CardTitle>
+                               <CardTitle>{item.user}</CardTitle>
                                <CardText>{item.text}</CardText>
                             </Card>
                          </Col>)
