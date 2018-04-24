@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col, Media, Jumbotron } from 'reactstrap';
-import TrendingTopics from './DetailTTPage';
 
 //Components
+import TrendingTopics from './DetailTTPage';
 import Menu from './Components/Navbar';
 import InputPost from './Components/InputPost';
 import Post from './Components/Post';
@@ -172,7 +172,7 @@ class Newsfeed extends Component {
                   />
                 </Col>
                 <Col md="6">
-                  <TrendingTopics />
+                  <TrendingTopics posts ={this.state.posts} />
                 </Col>
               </Row>
             </div>)
