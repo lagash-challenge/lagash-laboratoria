@@ -33,7 +33,7 @@ class InputPost extends Component {
   render() {    
     return (
       <Form onSubmit={this.handleSubmit}>
-        <Input placeholder="Nombre"  onChange={this.handleChangeName} type="text"  />
+        <Input placeholder="Escribe tu nombre"  onChange={this.handleChangeName} type="text"  />
         <Input placeholder="Comparte tu opinión" value={this.props.text} onChange={this.handleChange} type="textarea" name="text" id="message" />
         <Button type="submit" className="prueba">Publicar</Button>
       </Form>);
