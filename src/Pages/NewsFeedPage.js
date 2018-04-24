@@ -150,10 +150,10 @@ class Newsfeed extends Component {
             <div>
               <Menu />
               <Jumbotron>
-                <img src="https://user-images.githubusercontent.com/32860789/39203019-4b8ef4b4-47b9-11e8-88c8-25f15823f97b.png" />
+                <img src="https://user-images.githubusercontent.com/32860789/39203019-4b8ef4b4-47b9-11e8-88c8-25f15823f97b.png" width="40%"/>
               </Jumbotron>
               <Row>
-                <Col md="6" xs="7">
+                <Col md="6" xs="12">
                 <p>¿Qué quieres compartir hoy?</p>
                 <InputPost
                     handleClick={this.handleClick}
@@ -162,12 +162,14 @@ class Newsfeed extends Component {
                     text={this.state.text}
                     name={this.state.user}
                 />
-                <img src="https://user-images.githubusercontent.com/32860789/39204328-191e6010-47bd-11e8-8af6-6ea19a4aa073.png" />                
+                <img src="https://user-images.githubusercontent.com/32860789/39204328-191e6010-47bd-11e8-8af6-6ea19a4aa073.png" width="90%"/>                
                 <Post
                     messages={this.state.posts}
                   />
                 </Col>
-                <Col md="6" xs="5">
+                <Col md="5" xs="12">
+                  <img src="https://user-images.githubusercontent.com/32860789/39207866-bd781558-47c6-11e8-86e5-756667353123.png" width="90%"/>                
+                  <img src="https://user-images.githubusercontent.com/32860789/39206719-c6c94184-47c3-11e8-829b-1e0556072ede.png" width="90%"/>                
                   <TrendingTopics />
                 </Col>
               </Row>
