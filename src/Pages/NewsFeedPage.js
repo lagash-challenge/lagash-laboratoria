@@ -9,6 +9,7 @@ import Post from './Components/Post';
 
 
 class Newsfeed extends Component {
+    
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
@@ -24,7 +25,10 @@ class Newsfeed extends Component {
             keyPhrases:{},
             score:{} ,
             postFinal:{}           
-        }
+        }       
+
+        this.azureResponse = {};
+
 
     }//END Constructor
 
@@ -54,10 +58,9 @@ class Newsfeed extends Component {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({ documents: [message] }),
-            "content-type": 'application/json',
         })
             .then((response) => response.json())
-            .then(parsedJSON => this.setState({ keyPhrases: parsedJSON }))
+             .then(parsedJSON => this.azureResponse.keyPhrases = parsedJSON)
               //Post Score
             .then ( fetch("http://api-worldnews.azurewebsites.net/cognitive/sentiment", {
                     method: "POST",
@@ -65,10 +68,9 @@ class Newsfeed extends Component {
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({ documents: [message] }),
-                    "content-type": 'application/json',
                 })
                     .then((response) => response.json())
-                    .then(parsedJSON => this.setState({ score: parsedJSON }))
+                    .then(parsedJSON => this.azureResponse.sentiment = parsedJSON)
                     .then(()=>this.creatingfinalPost())
                     .then(()=>this.sendFinalPost())
                     .catch(error => console.log('parsing failed', error))) 
@@ -79,15 +81,18 @@ class Newsfeed extends Component {
 
     creatingfinalPost(){
 
+        console.log(this.azureResponse);
+        console.log(this.azureResponse.keyPhrases);
+        
         let index=this.state.messagesUser.length;
         var keyPhrases = [];
         var sentiment = [];     
-        if (this.state.keyPhrases != undefined || this.state.keyPhrases.length) {
-            keyPhrases = this.state.keyPhrases.documents[0].keyPhrases;
+        if (this.azureResponse.keyPhrases != undefined || this.azureResponse.keyPhrases.documents.length>0) {
+            keyPhrases = this.azureResponse.keyPhrases.documents[0].keyPhrases;
         }
-        if (this.state.score != undefined || this.state.score.length) {
-            sentiment = this.state.score.documents[0].score;
-        }
+        if (this.azureResponse.sentiment != undefined || this.azureResponse.sentiment.documents.length>0) {
+            sentiment = this.azureResponse.sentiment.documents[0].score;
+        } //END if
 
         const finalPost = {
             user: this.state.user,
@@ -111,10 +116,9 @@ class Newsfeed extends Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(this.state.postFinal),
-            "content-type": 'application/json',
         })
             .then((response) => response.json())
-            .then(parsedJSON => this.setState({ posts: [...this.state.posts, parsedJSON]}))
+            .then((parsedJSON) => this.setState({ posts: [...this.state.posts, parsedJSON]}))
             .catch(error => console.log('parsing failed', error))
 
     } //END sendFinalPost
@@ -140,7 +144,7 @@ class Newsfeed extends Component {
     }// END fetchData
 
     render() {
-        console.log(this.state);
+        console.log(this.state.postFinal);
         
         return (
             <div>

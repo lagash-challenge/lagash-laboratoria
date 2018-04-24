@@ -15,7 +15,7 @@ class Post extends Component {
             return (
                 <div>
                     <Row>
-                     { messages.sort().map((item, index)=>{
+                     { messages.map((item, index)=>{
                          return(
                           <Col key={item.id||index} sm="12">
                             <Card body>
