@@ -3,6 +3,7 @@ import { Row, Col, Jumbotron } from 'reactstrap';
 import TrendingTopics from './DetailTTPage';
 
 //Components
+import TrendingTopics from './DetailTTPage';
 import Menu from './Components/Navbar';
 import InputPost from './Components/InputPost';
 import Post from './Components/Post';
@@ -167,6 +168,7 @@ class Newsfeed extends Component {
                     messages={this.state.posts}
                   />
                 </Col>
+
                 <Col md="5" xs="12">
                   <img src="https://user-images.githubusercontent.com/32860789/39207866-bd781558-47c6-11e8-86e5-756667353123.png" width="90%"/>                
                   <img src="https://user-images.githubusercontent.com/32860789/39206719-c6c94184-47c3-11e8-829b-1e0556072ede.png" width="90%"/>                
