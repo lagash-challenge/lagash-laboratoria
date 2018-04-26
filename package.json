@@ -7,6 +7,7 @@
     "fusioncharts": "^3.12.2",
     "nodejs": "0.0.0",
     "react": "^16.0.0",
+    "react-chartjs": "^1.2.0",
     "react-dom": "^16.0.0",
     "react-fusioncharts": "^1.0.5",
     "react-router-dom": "^4.2.2",

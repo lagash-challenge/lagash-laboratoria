@@ -72,13 +72,15 @@
 #root > div > div > div.jumbotron {
   background-image: url('../images/5372.jpg');
   background-size: cover;
+  padding: 3%;
 }
 
-/* #root > div > div > div.jumbotron > img {
-    width: 15%;
-} */
+#root > div > div > div.jumbotron > img {
+    height: auto;
+    width: 45%;
+}
 
-#root > div > div > div:nth-child(1) > nav > ul > img {
+#root > div > div:nth-child(1) > nav > ul > img {
     width: 300px;
     height: 40px;
     margin: 2% 0;
