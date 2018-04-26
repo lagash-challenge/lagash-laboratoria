@@ -4,7 +4,7 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 export default class Example extends React.Component {
   render() {
     return (
-      <ListGroup>
+      <ListGroup>  
         <ListGroupItem>Cras justo odio</ListGroupItem>
         <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
         <ListGroupItem>Morbi leo risus</ListGroupItem>
