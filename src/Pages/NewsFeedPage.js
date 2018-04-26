@@ -3,7 +3,6 @@ import { Row, Col, Jumbotron } from 'reactstrap';
 
 //Components
 import TrendingTopics from './DetailTTPage';
-import Menu from './Components/Navbar';
 import InputPost from './Components/InputPost';
 import Post from './Components/Post';
 import './NewsFeedPage.css';
@@ -148,9 +147,9 @@ class Newsfeed extends Component {
         
         return (
             <div>
-              <Menu />
+              
               <Jumbotron>
-                <img src="https://user-images.githubusercontent.com/32860789/39203019-4b8ef4b4-47b9-11e8-88c8-25f15823f97b.png" width="40%"/>
+                <img src="https://user-images.githubusercontent.com/32860789/39320617-3fec8f3a-494a-11e8-9a44-689fe1450e41.png" width="40%"/>
               </Jumbotron>
               <Row>
                 <Col md="6" xs="12">
@@ -168,7 +167,7 @@ class Newsfeed extends Component {
                   />
                 </Col>
 
-                <Col md="5" xs="12">
+                <Col md={{size: 5, order: 2, offset: 1}} xs="12">
                   <img src="https://user-images.githubusercontent.com/32860789/39207866-bd781558-47c6-11e8-86e5-756667353123.png" width="90%"/>                
                   <img src="https://user-images.githubusercontent.com/32860789/39206719-c6c94184-47c3-11e8-829b-1e0556072ede.png" width="90%"/>                
                   <TrendingTopics />
