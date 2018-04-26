@@ -11,7 +11,7 @@ export default class ContentTT extends React.Component {
   render() {
     console.log(this.props.posts, "tt");
     return (
-      <ListGroup>
+      <ListGroup>  
         <ListGroupItem>Cras justo odio</ListGroupItem>
         <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
         <ListGroupItem>Morbi leo risus</ListGroupItem>
